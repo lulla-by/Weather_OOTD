@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 const KakaoMap = () => {
 
   return (
-    <div id="map" style={{width:"500px",height:"400px",backgroundColor:"skyblue"}}></div>
+    <div id="map" style={{width:"100%",height:"300px",backgroundColor:"skyblue"}}></div>
   )
 }
 

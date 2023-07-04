@@ -1,0 +1,12 @@
+.wrap{
+	min-height: calc(100vh - 10rem); /* footer 높이를 빼준다. */
+	background: pink;
+}
+footer{
+	height: 5rem; /* footer 높이 */
+	background: yellow;
+}
+header{
+	height: 5rem; /* footer 높이 */
+	background: yellow;
+}
