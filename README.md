@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+자료 출처
+<a href="https://kr.freepik.com/free-vector/background-seamless-pattern-vector-with-cute-memphis_15841841.htm#query=pattern&position=0&from_view=search&track=sph">작가 rawpixel.com</a> 출처 Freepik

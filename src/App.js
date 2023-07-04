@@ -10,7 +10,7 @@ function App() {
       <header>header</header>
       <main className={classes.wrap}>
         <Layout>
-          <h1>welcome</h1>
+          <h1>OOTD</h1>
           <section>
             <Map />
           </section>
