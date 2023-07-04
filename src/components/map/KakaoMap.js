@@ -9,19 +9,14 @@ const KakaoMap = () => {
   const dispatch = useDispatch()
 
   async function onGeoOk(position) {
-    const WEATHER_KEY = process.env.REACT_APP_WEATHER_KEY
     const coords = position.coords;
     const { latitude, longitude } = coords;
-    const url = ` https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_KEY}&units=metric`;
-    const response = await fetch(url);
-    const data = await response.json();
     const container = document.getElementById("map")
-
     const msgBox =  '<div style="width:150px;text-align:center;padding:6px 0;">오늘의 여행지</div>'
     // 검색한 값이 있을 경우
     if (state !== "") {
       const options = {
-        center: new kakao.maps.LatLng(data.coord.lat, data.coord.lon),
+        center: new kakao.maps.LatLng(latitude, longitude ),
         level: 5
       }
       const map = new kakao.maps.Map(container, options)
@@ -58,7 +53,7 @@ const KakaoMap = () => {
       // 검색값이 없는 경우
     } else {
       const options = {
-        center: new kakao.maps.LatLng(data.coord.lat, data.coord.lon),
+        center: new kakao.maps.LatLng(latitude, longitude),
         level: 5
       }
       const map = new kakao.maps.Map(container, options)
