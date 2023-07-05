@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Information from './Information';
 import Clothes from './Clothes';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import { dfsXyConv } from '../../xyConverter';
 import axios from 'axios';
-import { weatherActions } from '../../store/weatherReducer';
+import classes from "./Contents.module.css"
 
 const Contents = () => {
 
-  const dispatch = useDispatch()
-
   const [nowWeather, setNowWether] = useState([])
-  // const nowWeather = useSelector(state=>state.weather)
-  console.log(nowWeather);
   const dateTimeConverter = (a) => {
     if (a < 10) {
       return "0" + a.toString()
@@ -82,7 +78,7 @@ const Contents = () => {
 
 
   return (
-    <div>
+    <div className={classes.container}>   
       <Information />
       <Clothes />
     </div>
