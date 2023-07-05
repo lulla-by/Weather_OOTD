@@ -17,8 +17,8 @@ const weatherReducer = createSlice({
       state.region = action.payload;
     },
     initialRegion(state,aciton){
-      state.current.lat = aciton.payload.La
-      state.current.long = aciton.payload.Ma
+      state.current.lat = aciton.payload.Ma
+      state.current.long = aciton.payload.La
     }
   },
 });
