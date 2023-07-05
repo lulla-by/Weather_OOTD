@@ -1,6 +1,7 @@
 .container {
+  margin: auto;
   margin-top: 30px;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 300px;
   border: 5px solid #d0ebff;
   border-radius: 5px;
