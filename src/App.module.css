@@ -1,6 +1,11 @@
 *{
 	text-align:center
 }
+.titleBox{
+	margin-top: 30px;
+	font-size: 20px;
+	color: #099268;
+}
 .wrap{
 	min-height: calc(100vh - 6rem); /* footer 높이를 빼준다. */
 	background: pink url("./assets/background.jpg") no-repeat;
@@ -8,6 +13,6 @@
 }
 footer,header{
 	height: 3rem; /* footer 높이 */
-	background: yellow;
+	background: linear-gradient(70deg,#c3fae8,#96f2d7,#63e6be);
 	text-align: center;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import {useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { weatherActions } from '../../store/weatherReducer';
-
+import classes from "./Search.module.css"
 
 const Search = () => {
   const [region, setRegion] = useState("")
@@ -20,7 +20,7 @@ const Search = () => {
 
 
   return (
-    <form onSubmit={weatherChangeHandler}>
+    <form className={classes.container} onSubmit={weatherChangeHandler}>
       <input value={region} onChange={inputChangeHandler} />
       <button type='submit'>검색</button>
     </form>

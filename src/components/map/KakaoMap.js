@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { weatherActions } from '../../store/weatherReducer';
-
+import classes from "./KakaoMap.module.css"
 const { kakao } = window;
 
 const KakaoMap = () => {
@@ -72,7 +72,7 @@ const KakaoMap = () => {
   const position = navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 
   return (
-    <div id="map" style={{ width: "100%", height: "300px", backgroundColor: "skyblue" }}></div>
+    <div id="map" className={classes.container}></div>
 
   )
 }

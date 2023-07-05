@@ -10,7 +10,9 @@ function App() {
       <header>header</header>
       <main className={classes.wrap}>
         <Layout>
-          <h1>OOTD</h1>
+          <div className={classes.titleBox}>
+          <h1>Choose your OOTD🌍</h1>
+          </div>
           <section>
             <Map />
           </section>
