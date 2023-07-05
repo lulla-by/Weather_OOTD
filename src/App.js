@@ -3,6 +3,7 @@ import Contents from './components/contents/Contents';
 import Layout from './ui/Layout';
 import { Fragment } from 'react';
 import classes from "./App.module.css"
+import Chart from './components/chart/Chart';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </div>
           <section>
             <Map />
+          </section>
+          <section>
+            <Chart/>
           </section>
           <section>
             <Contents />
