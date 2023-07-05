@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Information from './Information';
 import Clothes from './Clothes';
-import {useSelector } from 'react-redux';
+import {useDispatch, useSelector } from 'react-redux';
 import { dfsXyConv } from '../../xyConverter';
 import axios from 'axios';
 import classes from "./Contents.module.css"
+import { weatherActions } from '../../store/weatherReducer';
 
 const Contents = () => {
 
   const [nowWeather, setNowWether] = useState([])
+
+  const dispatch = useDispatch()
   const dateTimeConverter = (a) => {
     if (a < 10) {
       return "0" + a.toString()
@@ -21,9 +24,13 @@ const Contents = () => {
 
   let year = date.getFullYear().toString()
   let month = dateTimeConverter(date.getMonth() + 1)
-  let day = dateTimeConverter(date.getDate())
-
-  let hours = dateTimeConverter(date.getHours())
+  let getday = dateTimeConverter(date.getDate())
+  let day = getday
+  let getHours = dateTimeConverter(date.getHours())
+  let hours = getHours
+  if(hours ==="01"){
+    hours= "13"
+    day = "0"+(getday-1)  }
   let minutes = dateTimeConverter(date.getMinutes())
 
 
@@ -68,6 +75,8 @@ const Contents = () => {
           const data = response.data.response.body.items.item
           const filteredData = groupByFcstTime(data);
           setNowWether(filteredData)
+          dispatch(weatherActions.changeWeather(filteredData))
+          
         })
         .catch(error => {
           // 오류 처리
