@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import Information from './Information';
 import Clothes from './Clothes';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { dfsXyConv } from '../../xyConverter';
 import axios from 'axios';
+import { weatherActions } from '../../store/weatherReducer';
 
 const Contents = () => {
 
-  const [nowWeather, setNowWether] = useState([])
+  const dispatch = useDispatch()
 
-  const dateTimeConverter = (a)=>{
-    if(a < 10){
-      return "0"+a.toString()
-    }else{
+  const [nowWeather, setNowWether] = useState([])
+  // const nowWeather = useSelector(state=>state.weather)
+  console.log(nowWeather);
+  const dateTimeConverter = (a) => {
+    if (a < 10) {
+      return "0" + a.toString()
+    } else {
       return a.toString()
     }
   }
 
   let date = new Date();
-  
+
   let year = date.getFullYear().toString()
-  let month = dateTimeConverter(date.getMonth()+1)
+  let month = dateTimeConverter(date.getMonth() + 1)
   let day = dateTimeConverter(date.getDate())
 
   let hours = dateTimeConverter(date.getHours())
   let minutes = dateTimeConverter(date.getMinutes())
 
 
-  let baseDate = (year+month+day)
-  let baseTime = (hours+minutes > hours+"30" ? hours+"30" :hours-1+"30")
+  let baseDate = (year + month + day)
+  let baseTime = (hours + minutes > hours + "30" ? hours + "30" : hours - 1 + "30")
   const serviceKey = process.env.REACT_APP_WEATHER_KEY;
   const numOfRows = 1000;
   const pageNo = 1;
@@ -38,6 +42,21 @@ const Contents = () => {
   const { x: nx, y: ny } = dfsXyConv("toXY", lat, long);
 
 
+  // 받아온 데이터의 날짜와 시간을 토대로 인덱스를 만들어 배열을 생성후 객체를 추가하여 리턴하는 함수
+  function groupByFcstTime(data) {
+    const groupedData = {};
+
+    data.forEach((item) => {
+      const fcstTime = item.fcstTime;
+      const fcstDate = item.fcstDate
+      if (!groupedData[fcstDate+fcstTime]) {
+        groupedData[fcstDate+fcstTime] = [];
+      }
+      groupedData[fcstDate+fcstTime].push(item);
+    });
+
+    return groupedData;
+  }
 
   useEffect(() => {
     if (lat === "") {
@@ -51,14 +70,16 @@ const Contents = () => {
       axios.get(url)
         .then(response => {
           const data = response.data.response.body.items.item
-          console.log(data);
+          const filteredData = groupByFcstTime(data);
+          setNowWether(filteredData)
         })
         .catch(error => {
           // 오류 처리
           console.error(error);
         });
     }
-  }, [lat,date])
+  }, [lat, long])
+
 
   return (
     <div>
