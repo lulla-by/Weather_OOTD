@@ -29,7 +29,7 @@ const Contents = () => {
   let getHours = dateTimeConverter(date.getHours())
   let hours = getHours
   if(hours ==="01"){
-    hours= "13"
+    hours= "01"
     day = "0"+(getday-1)  }
   let minutes = dateTimeConverter(date.getMinutes())
 
