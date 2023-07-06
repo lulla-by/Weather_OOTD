@@ -95,7 +95,7 @@ const Contents = () => {
 
       axios.get(url)
         .then(response => {
-          const data = response.data.response.body.items.item
+          const data = response?.data?.response?.body?.items?.item
           const filteredData = groupByFcstTime(data);
           dispatch(weatherActions.changeChartWeather(filteredData))
 
