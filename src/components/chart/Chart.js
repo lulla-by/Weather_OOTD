@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ApexCharts from 'react-apexcharts'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { weatherActions } from './../../store/weatherReducer';
 
 const Chart = () => {
-  const weatherData = useSelector(state=>state.weather)
- const [chartData,setChartData] = useState([])
+  const dispatch = useDispatch()
+  const weatherData = useSelector(state=>state.chartWeather)
+ const [chartShowStata,setChartShowData] = useState(false)
+const chartName = (chartShowStata?"차트 닫기":"차트 보기")
 
  function convertDateTime(dateTime) {
   const year = dateTime.slice(2, 4);
@@ -15,8 +18,7 @@ const Chart = () => {
   return `${year}.${month}.${day} ${hour}시`;
 }
 
-
-  const make = (datas) => {
+  const getDataObject = (datas) => {
     const obj = {};
     for (const item in datas) {
       if (!obj[item]) {
@@ -34,17 +36,18 @@ const Chart = () => {
         obj[item][fcstDate + fcstTime][category] = datas[item][i].fcstValue;
       }
     }
-  
     return obj;
   };
 
-  let data = make(weatherData)
-  // console.log(data);
+  let data = getDataObject(weatherData)
 
-  const aaa = Object.entries(data).map(([key, value]) => {
+
+  const filteredData = Object.entries(data).map(([key, value]) => {
     return value
   });
-
+  useEffect(()=>{
+    dispatch(weatherActions.changeNowWeather(filteredData[0]))
+  },[weatherData])
   const makeSeries = (data)=>{
     let arr = [{name: 'Actual',
     data:[
@@ -72,11 +75,8 @@ const Chart = () => {
 
   }
 
-
-
-  const makedSeries = makeSeries(aaa)
+  const makedSeries = makeSeries(filteredData)
   
-
   const options = {
     chart: {
       height: 350,
@@ -91,8 +91,9 @@ const Chart = () => {
   };
 
   return (
-    <div id="chart">
-      <ApexCharts options={options} series={makedSeries} type="bar" height={350} />
+    <div>
+      {chartShowStata && <ApexCharts options={options} series={makedSeries} type="bar" height={350} />}
+      <button style={{marginTop:"30px"}} onClick={()=>{setChartShowData((prev)=>!prev)}}>{chartName}</button>
     </div>
   );
 };
