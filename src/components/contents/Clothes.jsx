@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from "./Clothes.module.css"
 import image from "../../assets/clothes/우산.png"
+import Loading from '../../ui/Loading'
 
 const Clothes = ({ props }) => {
   let { temperature, precipitationType } = props;
@@ -57,12 +58,15 @@ const Clothes = ({ props }) => {
 
 
   const outerItemImage = outer(outerItem)
-  console.log(outerItemImage);
   const topItemImage = require(`../../assets/clothes/${topItem}.png`)
   const bottomItemImage = require(`../../assets/clothes/${bottomItem}.png`)
 
 
   const msg = "우산"
+
+
+  if (bottomItem === undefined || topItem ===undefined ||temperature === undefined) return <Loading />
+
 
   return (
     <Card>
