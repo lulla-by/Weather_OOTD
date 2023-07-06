@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Information from './Information';
 import Clothes from './Clothes';
 import { useDispatch, useSelector } from 'react-redux';
-import { dfsXyConv } from '../../xyConverter';
+import { dfsXyConv } from '../../utils/xyConverter';
 import axios from 'axios';
 import classes from "./Contents.module.css"
 import { weatherActions } from '../../store/weatherReducer';
