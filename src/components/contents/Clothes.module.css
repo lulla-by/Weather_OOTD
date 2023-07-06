@@ -1,0 +1,46 @@
+.a11yHidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+h2{
+  margin: 0;
+  margin-top: 30px;
+}
+
+img{
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+.outerBox{
+  margin-top: 30px;
+  display:inline-block
+}
+
+.topBox{
+  margin-top: 30px;
+  display:inline-block
+}
+
+.bottomBox{
+display: block;
+}
+
+.umbrellaBox{
+  position: absolute;
+  top: 330px;
+  right: 30px;
+width: 100px;
+height: 250px;
+/* background-color: red; */
+}
+
+.umbrellaBox img{
+
+ transform: rotate(-150deg);
+}
