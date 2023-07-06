@@ -6,7 +6,8 @@ let initialState = {
     lat:"",
     long:""
   },
-  weather:""
+  chartWeather:"",
+  nowWeather:{}
 };
 
 // 전역상태의 slice를 미리 만들기
@@ -21,8 +22,13 @@ const weatherReducer = createSlice({
       state.current.lat = aciton.payload.Ma
       state.current.long = aciton.payload.La
     },
-    changeWeather(state,aciton){
-      state.weather = aciton.payload
+    changeChartWeather(state,aciton){
+      state.chartWeather = aciton.payload
+    },
+    changeNowWeather(state,action){
+      for(let key in action.payload){
+      state.nowWeather = action.payload[key]
+      }
     }
   },
 });
