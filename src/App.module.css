@@ -8,8 +8,8 @@
 }
 .wrap{
 	min-height: calc(100vh - 6rem); /* footer 높이를 빼준다. */
-	background: pink url("./assets/background.jpg") no-repeat;
-	background-size: cover;
+	background: white url("./assets/background.jpg") no-repeat;
+background-size: 100% auto;;
 }
 footer,header{
 	height: 3rem; /* footer 높이 */
