@@ -2,21 +2,21 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from './information.module.css'
 import { getNowWeather } from '../../utils/getNowWeather';
-import Loading from '../../ui/Loading'
+import Loading from './../../ui/Loading';
 
+const Information = ({ props,data }) => {
 
-const Information = ({ props }) => {
   const { temperature, precipitation, humidity, precipitationType, skyCondition } = props;
-
   const weatherClasseName = getNowWeather(precipitationType, skyCondition)
-  const weatherMsg = "현재 날씨: "+(weatherClasseName&&weatherClasseName[1])
+  const weatherMsg = "현재 날씨: " + (weatherClasseName && weatherClasseName[1])
 
-  if (temperature === undefined) return <Loading/>
-
+  if(data === undefined) {
+    return <Loading/>
+  }
 
   return (
     <Card>
-      <div className={`${classes.weather} ${classes[weatherClasseName&&weatherClasseName[0]]}`}>
+      <div className={`${classes.weather} ${classes[weatherClasseName && weatherClasseName[0]]}`}>
         <p className={classes.a11yHidden}>{weatherMsg}</p>
       </div>
       <ul className={classes.infoBox}>
@@ -24,7 +24,7 @@ const Information = ({ props }) => {
           <p>기온: {temperature}℃</p>
         </li>
         <li className={classes.info}>
-          <p>강수량: {(precipitation === "강수없음" ? "0ml" : (precipitation + "ml"))}</p>
+          <p>강수량: {(precipitation === "강수없음" ? "0mm" : (precipitation))}</p>
         </li>
         <li className={classes.info}>
           <p>습도: {humidity}%</p>

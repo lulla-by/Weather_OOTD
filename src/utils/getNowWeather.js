@@ -1,5 +1,5 @@
  export const getNowWeather= (precipitationType, skyCondition) => {
-  if (precipitationType === "없음") {
+  if (precipitationType === "없음" || precipitationType ===null) {
     if (skyCondition === "구름 많음") {
       return ["cloudy","구름 많음"];
     } else if (skyCondition === "맑음") {

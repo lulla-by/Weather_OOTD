@@ -2,12 +2,11 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from "./Clothes.module.css"
 import image from "../../assets/clothes/우산.png"
-import Loading from '../../ui/Loading'
-
-const Clothes = ({ props }) => {
+import Loading from './../../ui/Loading';
+const Clothes = ({ props,data }) => {
   let { temperature, precipitationType } = props;
-  // temperature=20
-  // precipitationType="눈"
+
+
   const getOuterItem = (temp) => {
     if (temp < 0) {
       return "패딩"
@@ -65,7 +64,9 @@ const Clothes = ({ props }) => {
   const msg = "우산"
 
 
-  if (bottomItem === undefined || topItem ===undefined ||temperature === undefined) return <Loading />
+  if(data === undefined) {
+    return <Loading/>
+  }
 
 
   return (
