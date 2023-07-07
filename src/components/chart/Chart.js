@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ApexCharts from 'react-apexcharts'
 import { useDispatch, useSelector } from 'react-redux';
-import { weatherActions } from './../../store/weatherReducer';
+import Button from '../../ui/Button';
 
 const Chart = () => {
   const dispatch = useDispatch()
   const weatherData = useSelector(state=>state.chartWeather)
  const [chartShowStata,setChartShowData] = useState(false)
-const chartName = (chartShowStata?"차트 닫기":"차트 보기")
+const chartName = (chartShowStata?"Close Chart":"Show Chart")
 
  function convertDateTime(dateTime) {
   const year = dateTime.slice(2, 4);
@@ -18,36 +18,11 @@ const chartName = (chartShowStata?"차트 닫기":"차트 보기")
   return `${year}.${month}.${day} ${hour}시`;
 }
 
-  const getDataObject = (datas) => {
-    const obj = {};
-    for (const item in datas) {
-      if (!obj[item]) {
-        obj[item] = [];
-      }
-      for (let i = 0; i < datas[item].length; i++) {
-        const fcstTime = datas[item][i].fcstTime;
-        const fcstDate = datas[item][i].fcstDate;
-        const category = datas[item][i].category;
-  
-        if (!obj[item][fcstDate + fcstTime]) {
-          obj[item][fcstDate + fcstTime] = {};
-        }
-  
-        obj[item][fcstDate + fcstTime][category] = datas[item][i].fcstValue;
-      }
-    }
-    return obj;
-  };
 
-  let data = getDataObject(weatherData)
-
-
-  const filteredData = Object.entries(data).map(([key, value]) => {
+  const filteredData = Object.entries(weatherData).map(([key, value]) => {
     return value
   });
-  useEffect(()=>{
-    dispatch(weatherActions.changeNowWeather(filteredData[0]))
-  },[weatherData])
+
   const makeSeries = (data)=>{
     let arr = [{name: 'Actual',
     data:[
@@ -93,7 +68,7 @@ const chartName = (chartShowStata?"차트 닫기":"차트 보기")
   return (
     <div>
       {chartShowStata && <ApexCharts options={options} series={makedSeries} type="bar" height={350} />}
-      <button style={{marginTop:"30px"}} onClick={()=>{setChartShowData((prev)=>!prev)}}>{chartName}</button>
+      <Button onClick={()=>{setChartShowData(!chartShowStata)}} >{chartName}</Button>
     </div>
   );
 };

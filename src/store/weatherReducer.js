@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getDataObject } from "./getData";
+
+
 
 let initialState = {
-  region:"",
   current:{
     lat:"",
     long:""
   },
   chartWeather:"",
-  nowWeather:{}
+  region:"",
+  isLoading:""
 };
 
 // 전역상태의 slice를 미리 만들기
@@ -15,20 +18,21 @@ const weatherReducer = createSlice({
   name: "counter",
   initialState: initialState,
   reducers: {
+    initialRegion(state,action){
+      state.current.lat = action.payload.La
+      state.current.long = action.payload.Ma
+    },
+    changeChartWeather(state,action){
+      const data = getDataObject(action.payload)
+      state.chartWeather = data
+      state.isLoading=false
+      
+    },
     regionChange(state,action) {
       state.region = action.payload;
     },
-    initialRegion(state,aciton){
-      state.current.lat = aciton.payload.Ma
-      state.current.long = aciton.payload.La
-    },
-    changeChartWeather(state,aciton){
-      state.chartWeather = aciton.payload
-    },
-    changeNowWeather(state,action){
-      for(let key in action.payload){
-      state.nowWeather = action.payload[key]
-      }
+    isLoadingChange(state,action){
+      state.isLoading = action.payload
     }
   },
 });
