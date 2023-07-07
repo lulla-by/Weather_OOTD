@@ -1,9 +1,10 @@
 .container {
   margin: auto;
   margin-top: 30px;
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
   height: 300px;
-  border: 5px solid #d0ebff;
+  /* border: 5px solid #d0ebff; */
   border-radius: 5px;
   background-color: skyblue;
+  box-shadow: 5px 5px 5px 5px lightgray ;
 }
