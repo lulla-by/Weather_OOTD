@@ -68,7 +68,7 @@ const chartName = (chartShowStata?"Close Chart":"Show Chart")
   };
 
 
-  if(isLoading === true || weatherData=== "") {
+  if((isLoading === true || weatherData=== "") && chartShowStata === true) {
     return <Loading/>
   }
 
