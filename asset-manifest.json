@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/pages/static/css/main.8b06f8eb.css",
+    "main.js": "/pages/static/js/main.1819d9ac.js",
+    "static/js/787.13d76ca7.chunk.js": "/pages/static/js/787.13d76ca7.chunk.js",
+    "static/media/background.jpg": "/pages/static/media/background.44d83e202f9eaff7c44d.jpg",
+    "static/media/야상.png": "/pages/static/media/야상.c7fb92b4323373fcf584.png",
+    "static/media/코트.png": "/pages/static/media/코트.cd4998c49f4508b25668.png",
+    "static/media/자켓.png": "/pages/static/media/자켓.53c3bc5cdebd5e68a163.png",
+    "static/media/우산.png": "/pages/static/media/우산.b7c3b53f3d45bdf42040.png",
+    "static/media/가디건.png": "/pages/static/media/가디건.98234246e314a2d90992.png",
+    "static/media/반팔.png": "/pages/static/media/반팔.b72708aae72f272c3980.png",
+    "static/media/패딩.png": "/pages/static/media/패딩.46ed0a7614947b0e1068.png",
+    "static/media/민소매.png": "/pages/static/media/민소매.d0da71540614f313eabc.png",
+    "static/media/얇은긴팔.png": "/pages/static/media/얇은긴팔.0b0fa0a72ad1da7d3396.png",
+    "static/media/반바지.png": "/pages/static/media/반바지.2f543611a14b9b63b57f.png",
+    "static/media/두꺼운긴팔.png": "/pages/static/media/두꺼운긴팔.56e34e0bc6a42892b0f3.png",
+    "static/media/긴바지.png": "/pages/static/media/긴바지.0c01c62d374045064345.png",
+    "static/media/두꺼운바지.png": "/pages/static/media/두꺼운바지.52cddeeaa1862cd90b45.png",
+    "static/media/맑음.png": "/pages/static/media/맑음.e2eb9f23f400e954012b.png",
+    "index.html": "/pages/index.html",
+    "main.8b06f8eb.css.map": "/pages/static/css/main.8b06f8eb.css.map",
+    "main.1819d9ac.js.map": "/pages/static/js/main.1819d9ac.js.map",
+    "787.13d76ca7.chunk.js.map": "/pages/static/js/787.13d76ca7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b06f8eb.css",
+    "static/js/main.1819d9ac.js"
+  ]
+}
