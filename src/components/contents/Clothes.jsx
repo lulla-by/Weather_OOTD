@@ -7,9 +7,7 @@ const Clothes = ({ props,data }) => {
   let { temperature, precipitationType } = props;
 
   let region = useSelector(state => state.region)
-  console.log(region);
-
-
+  
   const getOuterItem = (temp) => {
     if (temp < 0) {
       return "패딩"

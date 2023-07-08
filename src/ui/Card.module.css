@@ -2,7 +2,8 @@
   position: relative;
   height:600px;
   width: 400px;
-  /* border: 1px solid black; */
   border-radius: 5px;
   display: inline-block;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px #dee2e6 ;
 }

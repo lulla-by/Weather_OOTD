@@ -7,50 +7,39 @@
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 .weather {
+  background:linear-gradient(90deg,#e7f5ff,#e9ecef,#f8f9fa);
   margin: auto;
   margin-top: 30px;
   height: 300px;
   width: 300px;
-  border-radius: 100%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #dee2e6 ;
 }
 
-.cloudy {
-  background: url("../../assets/구름많음.png") no-repeat center,
-linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  background-size: 80%;
+.weather img{
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
-.sunny {
-  background: url("../../assets/맑음.png") no-repeat center,
-  linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  background-size: 80%;
-}
-.rain {
-  background: url("../../assets/비.png") no-repeat center,
-  linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  background-size: 80%;
-}
-.snow {
-  background: url("../../assets/눈.png") no-repeat center,
-  linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  background-size: 80%;
-}
-.gloomy {
-  background: url("../../assets/흐림.png") no-repeat center,
-  linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-  background-size: 80%;
-}
+
 .infoBox{
+  display: block;
   width: 300px;
-  padding: 0;
-  margin: auto;
   list-style: none;
 }
 .info{
-  margin-top: 10px;
-  width: 300px;
-  border-radius: 5px;
-  background-image: linear-gradient(70deg, #fff1eb 0%, #ace0f9 100%);
+  width: 100%;
   height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+  font-weight: 600;
+  color: white;
   line-height: 40px;
-  /* margin: auto; */
+  box-shadow: 2px 2px 2px 2px #dee2e6;
+}
+.info:hover{
+  background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
 }
