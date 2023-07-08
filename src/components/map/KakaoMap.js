@@ -34,7 +34,8 @@ const KakaoMap = () => {
         // console.log(filteredData);
       })
       .catch(error => {
-        console.error(error);
+        alert("다시 입력해주세요")
+        window.location.reload()
       });
     dispatch(weatherActions.initialRegion({ lat, long }))
 
