@@ -11,16 +11,10 @@ function App() {
       <header>header</header>
       <main className={classes.wrap}>
         <Layout>
-          <div className={classes.titleBox}>
-          <h1>Choose your OOTD🌍</h1>
-          </div>
+          <h1 className={classes.title}>Choose your OOTD🌍</h1>
           <section>
             <Map />
-          </section>
-          <section>
             <Chart/>
-          </section>
-          <section>
             <Contents />
           </section>
         </Layout>
