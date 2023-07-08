@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import ApexCharts from 'react-apexcharts'
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../ui/Button';
+import Loading from '../../ui/Loading';
 
 const Chart = () => {
-  const dispatch = useDispatch()
   const weatherData = useSelector(state=>state.chartWeather)
- const [chartShowStata,setChartShowData] = useState(false)
+  const isLoading = useSelector(state=>state.isLoading)
+ const [chartShowStata,setChartShowData] = useState(true)
 const chartName = (chartShowStata?"Close Chart":"Show Chart")
+
 
  function convertDateTime(dateTime) {
   const year = dateTime.slice(2, 4);
@@ -64,6 +66,11 @@ const chartName = (chartShowStata?"Close Chart":"Show Chart")
       }
     },
   };
+
+
+  if(isLoading === true || weatherData=== "") {
+    return <Loading/>
+  }
 
   return (
     <div>

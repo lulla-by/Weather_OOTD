@@ -2,17 +2,12 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from './information.module.css'
 import { getNowWeather } from '../../utils/getNowWeather';
-import Loading from './../../ui/Loading';
 
 const Information = ({ props,data }) => {
 
   const { temperature, precipitation, humidity, precipitationType, skyCondition } = props;
   const weatherClasseName = getNowWeather(precipitationType, skyCondition)
   const weatherMsg = "현재 날씨: " + (weatherClasseName && weatherClasseName[1])
-
-  if(data === undefined) {
-    return <Loading/>
-  }
 
   return (
     <Card>

@@ -2,7 +2,6 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from "./Clothes.module.css"
 import image from "../../assets/clothes/우산.png"
-import Loading from './../../ui/Loading';
 const Clothes = ({ props,data }) => {
   let { temperature, precipitationType } = props;
 
@@ -62,12 +61,6 @@ const Clothes = ({ props,data }) => {
 
 
   const msg = "우산"
-
-
-  if(data === undefined) {
-    return <Loading/>
-  }
-
 
   return (
     <Card>

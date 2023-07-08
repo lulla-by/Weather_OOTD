@@ -32,7 +32,7 @@ const Contents = () => {
   const weatherObj = {temperature, precipitation, humidity, precipitationType, skyCondition}
 
 
-  if(isLoading === true) {
+  if(isLoading === true ||data === undefined) {
     return <Loading/>
   }
 
