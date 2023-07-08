@@ -66,8 +66,8 @@ const Clothes = ({ props,data }) => {
 
   return (
     <Card>
-      {region === "" && <h2> 현재 위치 옷차림 추천</h2>}
-      {region !== "" && <h2> {region} 옷차림 추천</h2>}
+      {region === "" && <h2 className={classes.title}> 현재 위치 옷차림 추천</h2>}
+      {region !== "" && <h2 className={classes.title}> {region} 옷차림 추천</h2>}
       
 
       {outerItemImage != "필요없음" ?
