@@ -2,8 +2,12 @@ import React from 'react'
 import Card from '../../ui/Card'
 import classes from "./Clothes.module.css"
 import image from "../../assets/clothes/우산.png"
+import { useSelector } from 'react-redux'
 const Clothes = ({ props,data }) => {
   let { temperature, precipitationType } = props;
+
+  let region = useSelector(state => state.region)
+  console.log(region);
 
 
   const getOuterItem = (temp) => {
@@ -64,8 +68,9 @@ const Clothes = ({ props,data }) => {
 
   return (
     <Card>
-
-      <h2>현재 날씨 옷차림 추천</h2>
+      {region === "" && <h2> 현재 위치 옷차림 추천</h2>}
+      {region !== "" && <h2> {region} 옷차림 추천</h2>}
+      
 
       {outerItemImage != "필요없음" ?
         <div className={classes.outerBox} ><p className={classes.a11yHidden}>{outerItem}</p> <img src={outerItemImage} alt={outerItem} /></div>
