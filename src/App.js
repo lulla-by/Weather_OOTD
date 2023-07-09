@@ -4,8 +4,11 @@ import Layout from './ui/Layout';
 import { Fragment } from 'react';
 import classes from "./App.module.css"
 import Chart from './components/chart/Chart';
+import { useSelector } from 'react-redux';
+import AcessDenined from './components/error/AcessDenined';
 
 function App() {
+  const permission = useSelector(state => state.isLocationPermission)
   return (
     <Fragment>
       <header ><h1 className={classes.header}>OOTD WITH WEATHER</h1></header>
@@ -18,11 +21,15 @@ function App() {
               현재 날씨정보와 추천하는 옷차림을 확인하여 외출 준비에 참고하세요!
             </p>
           </section>
-          <section>
-            <Map />
-            <Chart />
-            <Contents />
-          </section>
+          {permission === false && <AcessDenined />
+          }
+          {permission === true &&
+            <section>
+              <Map />
+              <Chart />
+              <Contents />
+            </section>}
+
         </Layout>
       </main>
       <footer>
@@ -35,7 +42,7 @@ function App() {
             <a href="https://www.flaticon.com/kr/packs/clothes-212?word=clothes&k=1688648414821&log-in=google" title="의상 아이콘"> ⓒ 의상 아이콘 제작자: Freepik - Flaticon</a>
           </li>
           <li>
-          <a href="https://kr.freepik.com/free-vector/fashion-young-koreans_9471154.htm#page=7&query=fashion&position=6&from_view=search&track=sph"> ⓒ 배경이미지 제작자 pikisuperstar 출처 Freepik</a> 
+            <a href="https://kr.freepik.com/free-vector/fashion-young-koreans_9471154.htm#page=7&query=fashion&position=6&from_view=search&track=sph"> ⓒ 배경이미지 제작자 pikisuperstar 출처 Freepik</a>
           </li>
         </ul>
       </footer>

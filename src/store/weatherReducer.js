@@ -10,7 +10,8 @@ let initialState = {
   },
   chartWeather:"",
   region:"",
-  isLoading:""
+  isLoading:"",
+  isLocationPermission:true
 };
 
 // 전역상태의 slice를 미리 만들기
@@ -33,6 +34,9 @@ const weatherReducer = createSlice({
     },
     isLoadingChange(state,action){
       state.isLoading = action.payload
+    },
+    isLocationPermissionGranted(state,action){
+      state.isLocationPermission = action.payload
     }
   },
 });

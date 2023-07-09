@@ -31,7 +31,6 @@ const KakaoMap = () => {
         const data = await res.data.response.body.items.item
         const filteredData = await groupByFcstTime(data);
         dispatch(weatherActions.changeChartWeather(filteredData))
-        // console.log(filteredData);
       })
       .catch(error => {
         alert("다시 입력해주세요")
@@ -104,10 +103,10 @@ const KakaoMap = () => {
   }
 
   function onGeoError() {
-    console.log("Can't find you");
+    dispatch(weatherActions.isLocationPermissionGranted(false))
   }
-
-
+  
+  
   useEffect(() => {
     const position = navigator.geolocation.getCurrentPosition(createMap, onGeoError)
   }, [state])
