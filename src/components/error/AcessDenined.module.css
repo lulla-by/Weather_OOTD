@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 5px;
   margin: auto;
-  min-height: calc(100vh - 12rem - 130px);
+  min-height: calc(100vh - 12rem - 160px);
   display: flex;
   flex-direction: column;
   justify-content: center;

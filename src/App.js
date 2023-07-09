@@ -24,7 +24,7 @@ function App() {
           {permission === false && <AcessDenined />
           }
           {permission === true &&
-            <section>
+            <section className={classes.mainContents}>
               <Map />
               <Chart />
               <Contents />
