@@ -22,7 +22,7 @@ const Search = () => {
 
   return (
     <form className={classes.container} onSubmit={weatherChangeHandler}>
-      <input className={classes.search} value={region} onChange={inputChangeHandler} />
+      <input className={classes.search} placeholder="지역명을 검색하세요!" value={region} onChange={inputChangeHandler} />
       <Button type='submit'>Search</Button>
     </form>
   )
