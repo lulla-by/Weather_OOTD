@@ -52,14 +52,14 @@ const Clothes = ({ props,data }) => {
     if (outerItem == "아우터 착용 필요없음") {
       return "필요없음";
     } else {
-      return require(`/src/assets/clothes/${outerItem}.png`)
+      return require(`../../assets/clothes/${outerItem}.png`)
     }
   }
 
 
   const outerItemImage = outer(outerItem)
-  const topItemImage = require(`/src/assets/clothes/${topItem}.png`)
-  const bottomItemImage = require(`/src/assets/clothes/${bottomItem}.png`)
+  const topItemImage = require(`../..//assets/clothes/${topItem}.png`)
+  const bottomItemImage = require(`../../assets/clothes/${bottomItem}.png`)
 
   const msg = "우산"
 
