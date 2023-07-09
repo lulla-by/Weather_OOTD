@@ -62,6 +62,7 @@ const KakaoMap = () => {
           // 1. 유효하지 않은 주소일 경우 => 기본 위경도 보내기
           if (status === "ZERO_RESULT") {
             alert("주소지를 확인해주세요")
+            dispatch(weatherActions.regionChange(""))
             getWeatherData(latitude, longitude)
           }
 
