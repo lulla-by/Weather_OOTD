@@ -8,7 +8,7 @@ import Chart from './components/chart/Chart';
 function App() {
   return (
     <Fragment>
-      <header><h1>OOTD WITH WEATHER</h1></header>
+      <header ><h1 className={classes.header}>OOTD WITH WEATHER</h1></header>
       <main className={classes.wrap}>
         <Layout>
           <section className={classes.webDescription}>
