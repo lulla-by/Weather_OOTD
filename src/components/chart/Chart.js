@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ApexCharts from 'react-apexcharts'
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import Button from '../../ui/Button';
 import Loading from '../../ui/Loading';
 
@@ -32,7 +32,7 @@ const chartName = (chartShowStata?"Close Chart":"Show Chart")
     for(let i = 0 ; i< data.length ; i++){
       for(let key in data[i]){
         let temperature = data[i][key].T1H
-        let precipitation= (data[i][key].RN1==="강수없음"?0:data[i][key].RN1.toString().replace('mm', ''))
+        let precipitation = data[i][key].RN1 === "강수없음" ? 0 : parseFloat(data[i][key].RN1.replace('mm', ''));
         let now = convertDateTime(key)
         let obj = {
           x:now,
