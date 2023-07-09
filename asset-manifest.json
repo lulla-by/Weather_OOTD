@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weather/static/css/main.2d3b8a84.css",
-    "main.js": "/weather/static/js/main.abd5d711.js",
+    "main.css": "/weather/static/css/main.b55ef178.css",
+    "main.js": "/weather/static/js/main.45ad0bd7.js",
     "static/js/787.13d76ca7.chunk.js": "/weather/static/js/787.13d76ca7.chunk.js",
     "static/media/background.jpg": "/weather/static/media/background.44d83e202f9eaff7c44d.jpg",
     "static/media/야상.png": "/weather/static/media/야상.c7fb92b4323373fcf584.png",
@@ -19,12 +19,12 @@
     "static/media/두꺼운바지.png": "/weather/static/media/두꺼운바지.52cddeeaa1862cd90b45.png",
     "static/media/맑음.png": "/weather/static/media/맑음.e2eb9f23f400e954012b.png",
     "index.html": "/weather/index.html",
-    "main.2d3b8a84.css.map": "/weather/static/css/main.2d3b8a84.css.map",
-    "main.abd5d711.js.map": "/weather/static/js/main.abd5d711.js.map",
+    "main.b55ef178.css.map": "/weather/static/css/main.b55ef178.css.map",
+    "main.45ad0bd7.js.map": "/weather/static/js/main.45ad0bd7.js.map",
     "787.13d76ca7.chunk.js.map": "/weather/static/js/787.13d76ca7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d3b8a84.css",
-    "static/js/main.abd5d711.js"
+    "static/css/main.b55ef178.css",
+    "static/js/main.45ad0bd7.js"
   ]
 }
