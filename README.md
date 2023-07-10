@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=Waving&color=38d9a9&height=300&section=header&text=Weahter%20OOTD&fontSize=90&fontAlignY=40&fontColor=e6fcf5&desc=Choose%20Your%20Outfit&descSize=30&descAlignY=60)
+![header](https://capsule-render.vercel.app/api?type=Waving&color=38d9a9&height=300&section=header&text=Weather%20OOTD&fontSize=90&fontAlignY=40&fontColor=e6fcf5&desc=Choose%20Your%20Outfit&descSize=30&descAlignY=60)
 
 ## 💡 프로젝트 소개
 ![image](https://github.com/lulla-by/weather/assets/107671084/4c3d873b-0992-4cbf-96d7-7a60748f1d85)
