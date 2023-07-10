@@ -1,3 +1,14 @@
+![header](https://capsule-render.vercel.app/api?type=Waving&color=38d9a9&height=300&section=header&text=Weahter%20OOTD&fontSize=90&fontAlignY=40&fontColor=e6fcf5&desc=Choose%20Your%20Outfit&descSize=30&descAlignY=60)
+
+## 💡 프로젝트 소개
+![image](https://github.com/lulla-by/weather/assets/107671084/4c3d873b-0992-4cbf-96d7-7a60748f1d85)
+
+### 🏡 url: https://lulla-by.github.io/weather/
+
+#### 검색으로 원하는 위치로 이동하여 날씨정보를 확인하세요! 
+#### 차트와 상세 카드를 통해 현재시 기준의 날씨를 알려드리고 옷차림을 추천해드립니다!
+<br/>
+
 ## 📆 Period
 ### 2023.07.04 ~ 2023.07.10
 
