@@ -16,7 +16,7 @@ let initialState = {
 
 // 전역상태의 slice를 미리 만들기
 const weatherReducer = createSlice({
-  name: "counter",
+  name: "weather",
   initialState: initialState,
   reducers: {
     initialRegion(state,action){
